@@ -2,8 +2,6 @@
 from random import *
 def make_list_from_file(filename):
     file_content = open(filename,"r")
-    returning_list = []
-    for lines in file_content:
-        returning_list.append(lines.strip("\n").strip(" "))
-        #extract space and tabs from the liens
+    returning_list = [lines.strip("\n").strip(" ") for lines in file_content]
+    #make the list from the lines in file content, removing the lines with the tab and spaces
     return returning_list
