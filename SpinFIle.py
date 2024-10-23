@@ -4,22 +4,27 @@ import string
 
 def make_list_from_file(filename):
     file_content = open(filename,"r")
-    for lines in files:    
-        returning_list = [words for words in lines.lower().translate(str.maketrans('', '', string.punctuation)).lower().split(): ]
-        #make the list with the lowered and puncuation removed words
+    returning_list = []
+
+    for lines in file_content:
+        for words in lines.lower().translate(str.maketrans('', '', string.punctuation)).lower().split():
+            #for the words in the original file, remove punctuation and lower it.
+            returning_list.append(words)
+            #update the list with the converted words
+
     file_content.close()
     return returning_list
 
 def main():
-    original_list_of_words  = make_list_from_file("essay.txt")
-    original_list, spinned_list = Spinner(original_list_of_words).spinned.convert_synonyms()
+    words = make_list_from_file("essay.txt")
+    spinned = Spinner(words)
     #make a class using modified words
-    print("Original : " + " ".join(original_list)
+    print("Original : " + " ".join(words))
     #from the words of the original file, make them into a one full string
     for option_counter in range(1,4):
         #for 1~3
-        print("Option " + str(option_counter) +" : " + spinned_list)
+        print("Option " + str(option_counter) +" : " + spinned.convert_synonyms())
         #print 3 sequences of words converted om Spinner.py
 
-if __name-- == "__main()__"
+if __name__ == '__main__':
     main()
