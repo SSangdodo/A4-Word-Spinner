@@ -5,7 +5,8 @@ def make_list_from_file(filename):
     returning_list = []
     for lines in file_content:
         returning_list.append(lines.strip("\n").strip(" "))
-        #extract space and tabs from the liens
+        #extract space and tabs from the lines
+    file_content.close()
     return returning_list
 
 def make_response_dictionary(response_list):

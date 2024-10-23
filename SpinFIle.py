@@ -19,7 +19,7 @@ def main():
     words = make_list_from_file("essay.txt")
     spinned = Spinner(words)
     #make a class using modified words
-    print("Original : " + " ".join(words))
+    print("Original : " spinned.return_original_str())
     #from the words of the original file, make them into a one full string
     for option_counter in range(1,4):
         #for 1~3
