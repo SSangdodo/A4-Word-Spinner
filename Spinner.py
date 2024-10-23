@@ -31,7 +31,7 @@ class Spinner():
         returning_list = []
         for words in self.file_words_list:
             if self.synonyms_data.get(str(words),1) != 1 and randint(1,2) == 2:
-                # if the word exit within synonym dictionary and if it meets the 50% chance of changing the words
+                # if the word exist within synonym dictionary and if it meets the 50% chance of changing the words
                 returning_list.append(self.synonyms_data[words][randint(0,len(self.synonyms_data[words])-1)])
                 #append to the returning list, from random synonyms of the specified key
             else:
