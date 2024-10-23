@@ -12,7 +12,6 @@ def make_list_from_file(filename):
 
 def main():
     original_list_of_words  = make_list_from_file("essay.txt")
-     spinned.convert_synonyms()
     original_list, spinned_list = Spinner(original_list_of_words).spinned.convert_synonyms()
     #make a class using modified words
     print("Original : " + " ".join(original_list)
