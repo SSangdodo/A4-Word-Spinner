@@ -4,6 +4,7 @@ def make_list_from_file(filename):
     file_content = open(filename,"r")
     returning_list = []
     for lines in file_content:
+        print(lines)
         returning_list.append(lines.strip("\n").strip(" "))
         #extract space and tabs from the lines
     file_content.close()
@@ -14,6 +15,7 @@ def make_response_dictionary(response_list):
 
     for items in response_list:
         keyword,synonyms = items.split(":")
+        print(keyword,synonyms)
         #split the keyword section and synonym section
         keyword_and_response[keyword] = synonyms.split(",")
         #store the key and synonyms into a dictonary
@@ -28,7 +30,7 @@ class Spinner():
     def convert_synonyms(self):
         returning_list = []
         for words in self.file_words_list:
-
+            print(words)
             if self.synonyms_data.get(str(words),1) != 1 and randint(1,2) == 2:
                 # if the word exit within synonym dictionary and if it meets the 50% chance of changing the words
                 returning_list.append(self.synonyms_data[str(words)][randint(0,len(self.synonyms_data[words])-1)])
