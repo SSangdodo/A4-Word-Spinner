@@ -17,10 +17,13 @@ def make_response_dictionary(response_list):
         keyword_and_response[keyword] = synonyms.split(",")
         #store the key and synonyms into a dictonary
     return keyword_and_response
+
 class Spinner():
     def __init__(self,file_words):
             self.file_words_list = file_words
             self.synonyms_data = make_response_dictionary(make_list_from_file("synonyms-simplified.txt"))
+    def return_original_str(self):
+        return " ".join(self.file_words_list)
     def convert_synonyms(self):
         returning_list = []
         for words in self.file_words_list:
@@ -34,3 +37,4 @@ class Spinner():
                 #no match of synonym or 50% of unchanged words
 
         return " ".join(returning_list)
+    
